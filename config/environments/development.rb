@@ -48,8 +48,8 @@ Rails.application.configure do
       user_name:            'contato@cfccasal20.com.br',
       password:             'adminweb111',
       authentication:       'plain',
-      enable_starttls_auto: false
+      enable_starttls_auto: false,
+      openssl_verify_mode: "none"
   }
 
-  config.action_mailer.raise_delivery_errors = true
 end

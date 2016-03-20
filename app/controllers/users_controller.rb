@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       redirect_to sucesso_url
     else
       if User.find_by_email(@user.email)
+        @user=User.find_by_email(@user.email)
         UserMailer.welcome_email(@user).deliver_now
         redirect_to sucesso_url
       else

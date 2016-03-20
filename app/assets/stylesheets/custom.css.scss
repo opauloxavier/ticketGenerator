@@ -1,5 +1,6 @@
 $gray-medium-light: #eaeaea;
 
+
 @mixin box_sizing {
     -moz-box-sizing:    border-box;
     -webkit-box-sizing: border-box;
@@ -63,15 +64,9 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-}
 
-
+@media (max-width:700px){ .footer{position:absolute;width:100%;color:white;} }
+@media (min-width:700px){ .footer{position:absolute;bottom:0;height:60px;width:100%;color:#FFFFFF;}}
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */

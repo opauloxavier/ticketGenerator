@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="image/png" href="http://cfccasal20.com.br/wp-content/uploads/2015/07/favicon.png">
   <title><%= full_title(yield(:title)) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style="background: url(<%=image_path('bg.png') %>) no-repeat;">
+<body style="background: url(<%=image_path('bg.png')%>) no-repeat fixed;">
 <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 <% end %>
 
 <%= yield %>
-
 <footer class="footer">
   <div class="container">
-    <p class="text-muted" style="color:white;"><strong>Regulamento:</strong>
-      Desconto de 15% AB, Primeira CNH 20%,Inclusao A/B a 15% no dinheiro e à vista. Desconto no cartão de crédito em até 6x sem juros de 10% pra primeira CNH A ou B. Para Inclusao A/B, 5% de desconto. DUDA e clínica não estão inclusos. Os cupons são válidos até 30/04. Caso o vencedor do sorteio tenha utilizado o cupom de desconto, o mesmo sera ressarcido do valor ate os 50% da promocao.<br><br>Desenvolvivo por <a href="http://pauloxavier.com" target="_blank">Paulo Xavier</a></p>
+    <p style="font-size:12px;"><strong>Regulamento:</strong>
+      Desconto de 15% AB, Primeira CNH 20%,Inclusao A/B a 15% no dinheiro e à vista. Desconto no cartão de crédito em até 6x sem juros de 10% pra primeira CNH A ou B. Para Inclusao A/B, 5% de desconto. DUDA e clínica não estão inclusos. Os cupons são válidos até 30/04. Caso o vencedor do sorteio tenha utilizado o cupom de desconto, o mesmo sera ressarcido do valor ate os 50% da promocao.Para participar do sorteio é necessário curtir a página da Autoescola Casal20 e compartilhar em seu perfil em modo público, caso o sorteado não atenda a ambos os critérios será desqualificado e um próximo sorteio será feito até haver um ganhador elegível. O cupom de 50% tem 15 dias de validade a partir da divulgação do resultado. Desenvolvivo por <a href="http://pauloxavier.com" target="_blank">Paulo Xavier</a>.</p>
   </div>
 </footer>
 

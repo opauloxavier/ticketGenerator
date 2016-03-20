@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   after_initialize :default_values
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PHONE_REGEX =/\d{2}\d{5}\d{4}\b/
+  VALID_PHONE_REGEX =/\d{2} \d{5}\d{4}\b/
   before_save{ self.email = email.downcase }
 
   validates :name,presence: true
