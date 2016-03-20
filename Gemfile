@@ -55,4 +55,5 @@ end
 
 group :production do
   gem 'pg', '0.18.4'
+  gem 'unicorn'
 end
