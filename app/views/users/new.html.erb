@@ -1,47 +1,80 @@
 <% provide(:title, 'Cadastre-se') %>
-<h3>Cadastre-se</h3>
-
-<div class="row" style="margin-bottom:50px;">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+<div class="col-md-4 col-md-offset-4" style="margin-top:100px;">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <%=image_tag("18.png", options={class:"img-responsive"})%>
+      </div>
+    </div>
+    <div class="col-md-8 pull-right" style="background-color: #6d336e; color:#f6ae48;">
+      <h1><strong> PROMOÇÃO DE ANIVERSÁRIO </strong></h1>
+    </div>
+  </div>
+  <div class="row">
+    <h1 style="text-transform: uppercase; text-shadow: 2px 2px 1px #9eafb6; "> Concorra a uma habilitação B <span style="color:#6b3276;">com 50% de desconto!</span></h1>
+  </div>
+  <div class="row">
+    <h2 style="color:#eab648; text-transform: uppercase; text-align:center;"><strong>Cadastre-se e concorra!</strong></h2>
+  </div>
+  <div class="row">
+    <%= form_for(@user,html: {:class => 'form-horizontal align-center form-custom'}) do |f|%>
         <%= render 'shared/error_messages' %>
+      <fieldset>
+        <!-- Text input-->
         <div class="form-group">
-          <%= f.label :name, "Nome" %>
-          <%= f.text_field :name , class:"form-control" %>
-        </div>
-
-        <div class="form-group" style="margin-top:10px;">
-          <%= f.label :gender, "Sexo" ,style:"margin-top:10px;"%>
-          <%= f.select :gender, [["Selecione","-1"],["Masculino","m"],["Feminino","f"]] %>
-        </div>
-
-
-        <%= f.label :email, "Email" %>
-        <%= f.email_field :email, class:"form-control" %>
-
-        <%= f.label :password, "Senha, 2 vezes" %>
-        <%= f.password_field :password, class:"form-control" %>
-        <%= f.password_field :password_confirmation, class:"form-control", style:"margin-top:10px;" %>
-
-        <%= f.label :phone, "Telefone",style:"margin-top:10px;"%>
-        <%= f.phone_field :phone , class:"form-control"%>
-
-        <div clas="row" style="margin-top:10px;">
-          <div class="col-md-6">
-            <%= f.label :preference, "Habilitação Desejada" ,style:"margin-top:10px;"%>
-            <%= f.select :preference, [["Selecione",-1],["Categoria A (Moto)","a"],["Categoria B(Carro)","b"],["Categoria AB(Carro e Moto)","ab"]] %>
-          </div>
-          <div class="col-md-6">
-            <%= f.label :inclusion, "Ja possui CNH?" ,style:"margin-top:10px;"%>
-            <%= f.select :inclusion, [["Selecione",-1],["Sim","sim"],["Não","nao"]] %>
+          <label class="col-md-3 control-label" for="textinput">Nome</label>
+          <div class="col-md-8">
+            <%= f.text_field :name , class:"form-control",autofocus: true, placeholder:"Digite seu Nome",required:true %>
           </div>
         </div>
 
-        <div class="form-group" style="display:none">
-          <%= f.text_field :ticket,class:"form-control",value:getTicketNumber%>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="textinput">Email</label>
+          <div class="col-md-8">
+            <%= f.email_field :email, class:"form-control input-md",placeholder: "Digite seu E-mail",required:true %>
+
+          </div>
         </div>
 
-        <%= f.submit "Participar do Sorteio!", class: "btn btn-primary pull-right", style:"margin-top:10px;" %>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <%= f.label :gender, "Sexo" ,class:"col-md-3 control-label"%>
+          <div class="col-md-8">
+            <%= f.select :gender, [["Selecione","-1"],["Masculino","m"],["Feminino","f"]],{},{class: "form-control"} %>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="textinput">Telefone</label>
+          <div class="col-md-8">
+            <%= f.phone_field :phone , class:"form-control",required:true,placeholder:"Digite seu telefone"%>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <%= f.label :preference, "Habilitação Desejada" ,class:"col-md-3 control-label"%>
+          <div class="col-md-3">
+            <%=f.select :preference, [["Selecione",-1],["A (Moto)","a"],["B (Carro)","b"],["AB (Carro e Moto)","ab"]],{},{class: "form-control"} %>
+          </div>
+
+          <%= f.label :inclusion, "Ja possui CNH?" ,class:"col-md-2 control-label"%>
+          <div class="col-md-3">
+            <%= f.select :inclusion, [["Selecione",-1],["Sim","sim"],["Não","nao"]],{},{class: "form-control"} %>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <div class="col-md-12">
+            <div class="col-md-12">
+              <%= f.submit "Participar do Sorteio!", class: "btn btn-sample pull-right", style:"margin-top:10px;" %>
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
     <% end %>
   </div>
 </div>

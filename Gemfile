@@ -29,6 +29,7 @@ gem 'bcrypt',               '3.1.7'
 gem 'date_validator', '>=0.9.0'
 gem 'bootstrap-datepicker-rails'
 gem "letter_opener", :group => :development
+gem "sendinblue"
 
 
 # Use ActiveModel has_secure_password

@@ -6,27 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Auto Escola Casal 20</a>
-    </div>
-  </div><!--/.container-fluid -->
-</nav>
-
+<body style="background: url(<%=image_path('bg.png') %>) no-repeat;">
 <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 <% end %>
 
 <%= yield %>
 
-<footer id="footer" class="footer text-center">
+<footer class="footer">
   <div class="container">
-    <p class="text-muted"> Ticket Generator | 2016 - Todos os direitos reservados. Desenvolvido por <a href="http://www.pauloxavier.com" target="_blank" >Paulo Xavier</a><br><a href="mailto:contato.pauloxavier@gmail.com" target="_blank" ><span class="glyphicon glyphicon-envelope"> </span> contato.pauloxavier@gmail.com</a></p>
+    <p class="text-muted" style="color:white;"><strong>Regulamento:</strong>
+      Desconto de 15% AB, Primeira CNH 20%,Inclusao A/B a 15% no dinheiro e à vista. Desconto no cartão de crédito em até 6x sem juros de 10% pra primeira CNH A ou B. Para Inclusao A/B, 5% de desconto. DUDA e clínica não estão inclusos. Os cupons são válidos até 30/04. Caso o vencedor do sorteio tenha utilizado o cupom de desconto, o mesmo sera ressarcido do valor ate os 50% da promocao.<br><br>Desenvolvivo por <a href="http://pauloxavier.com" target="_blank">Paulo Xavier</a></p>
   </div>
 </footer>
-<%= debug(params) if Rails.env.development? %>
+
 </body>
 </html>

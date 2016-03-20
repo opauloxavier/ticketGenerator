@@ -7,7 +7,4 @@ module ApplicationHelper
         base_title+' | '+ page_title
       end
   end
-  def getTicketNumber
-     return SecureRandom.urlsafe_base64(nil, false)
-  end
 end

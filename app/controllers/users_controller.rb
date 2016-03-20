@@ -9,11 +9,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.welcome_email(@user).deliver_later
-      render 'show'
+      redirect_to sucesso_url
     else
       if User.find_by_email(@user.email)
         UserMailer.welcome_email(@user).deliver_now
-        render 'show'
+        redirect_to sucesso_url
       else
         render 'new'
       end

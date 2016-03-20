@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
  resources :users
 
- get 'home' => 'users#new'
- get '' => 'users#new'
+  get 'home' => 'users#new'
+  get '' => 'users#new'
+  get 'sucesso' => 'static_pages#sucesso'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
