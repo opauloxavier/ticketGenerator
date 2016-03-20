@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #inseridos por mim
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'bcrypt',               '3.1.7'
+gem 'date_validator', '>=0.9.0'
+gem 'bootstrap-datepicker-rails'
+gem "letter_opener", :group => :development
 
 
 # Use ActiveModel has_secure_password
@@ -45,8 +48,10 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
+group :production do
+  gem 'pg', '0.18.4'
+end

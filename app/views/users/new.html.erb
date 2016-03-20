@@ -1,2 +1,47 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Cadastre-se') %>
+<h3>Cadastre-se</h3>
+
+<div class="row" style="margin-bottom:50px;">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
+        <div class="form-group">
+          <%= f.label :name, "Nome" %>
+          <%= f.text_field :name , class:"form-control" %>
+        </div>
+
+        <div class="form-group" style="margin-top:10px;">
+          <%= f.label :gender, "Sexo" ,style:"margin-top:10px;"%>
+          <%= f.select :gender, [["Selecione","-1"],["Masculino","m"],["Feminino","f"]] %>
+        </div>
+
+
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email, class:"form-control" %>
+
+        <%= f.label :password, "Senha, 2 vezes" %>
+        <%= f.password_field :password, class:"form-control" %>
+        <%= f.password_field :password_confirmation, class:"form-control", style:"margin-top:10px;" %>
+
+        <%= f.label :phone, "Telefone",style:"margin-top:10px;"%>
+        <%= f.phone_field :phone , class:"form-control"%>
+
+        <div clas="row" style="margin-top:10px;">
+          <div class="col-md-6">
+            <%= f.label :preference, "Habilitação Desejada" ,style:"margin-top:10px;"%>
+            <%= f.select :preference, [["Selecione",-1],["Categoria A (Moto)","a"],["Categoria B(Carro)","b"],["Categoria AB(Carro e Moto)","ab"]] %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :inclusion, "Ja possui CNH?" ,style:"margin-top:10px;"%>
+            <%= f.select :inclusion, [["Selecione",-1],["Sim","sim"],["Não","nao"]] %>
+          </div>
+        </div>
+
+        <div class="form-group" style="display:none">
+          <%= f.text_field :ticket,class:"form-control",value:getTicketNumber%>
+        </div>
+
+        <%= f.submit "Participar do Sorteio!", class: "btn btn-primary pull-right", style:"margin-top:10px;" %>
+    <% end %>
+  </div>
+</div>

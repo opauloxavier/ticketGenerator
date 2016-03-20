@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TicketGenerator</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Auto Escola Casal 20</a>
+    </div>
+  </div><!--/.container-fluid -->
+</nav>
+
+<% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+<% end %>
+
 <%= yield %>
 
+<footer id="footer" class="footer text-center">
+  <div class="container">
+    <p class="text-muted"> Ticket Generator | 2016 - Todos os direitos reservados. Desenvolvido por <a href="http://www.pauloxavier.com" target="_blank" >Paulo Xavier</a><br><a href="mailto:contato.pauloxavier@gmail.com" target="_blank" ><span class="glyphicon glyphicon-envelope"> </span> contato.pauloxavier@gmail.com</a></p>
+  </div>
+</footer>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
