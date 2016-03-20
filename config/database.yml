@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ticketGenerator_production
-  username: ticketGenerator
-  password: <%= ENV['TICKETGENERATOR_DATABASE_PASSWORD'] %>
+  database: d6m50osomhpgse
+  username: okobuabrhiphjl
+  password: aCysx3mrzJSzIeBKWQMoLLxztb
