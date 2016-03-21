@@ -7,6 +7,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-65341698-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </head>
 <body style="background: url(<%=image_path('bg.png')%>) no-repeat fixed;">
 <% flash.each do |message_type, message| %>
@@ -16,8 +24,7 @@
 <%= yield %>
 <footer class="footer">
   <div class="container">
-    <p style="font-size:12px;"><strong>Regulamento:</strong>
-      Desconto de 15% AB, Primeira CNH 20%,Inclusao A/B a 15% no dinheiro e à vista. Desconto no cartão de crédito em até 6x sem juros de 10% pra primeira CNH A ou B. Para Inclusao A/B, 5% de desconto. DUDA e clínica não estão inclusos. Os cupons são válidos até 30/04. Caso o vencedor do sorteio tenha utilizado o cupom de desconto, o mesmo sera ressarcido do valor ate os 50% da promocao.Para participar do sorteio é necessário curtir a página da Autoescola Casal20 e compartilhar em seu perfil em modo público, caso o sorteado não atenda a ambos os critérios será desqualificado e um próximo sorteio será feito até haver um ganhador elegível. O cupom de 50% tem 15 dias de validade a partir da divulgação do resultado. Desenvolvivo por <a href="http://pauloxavier.com" target="_blank">Paulo Xavier</a>.</p>
+    <p style="font-size:12px;"><strong>Regulamento:</strong>Primeira Habilitação(Categoria A,B ou AB) 20% de desconto a vista em dinheiro e 10% nos cartões em até 6x sem juros. Inclusões com 15% de desconto a vista e 5% de desconto em até 6x sem juros nos cartões.DUDA e clínica não estão inclusos. Os cupons são válidos até 30/04. Caso o vencedor do sorteio tenha utilizado o cupom de desconto, o mesmo sera ressarcido do valor ate os 50% da promocao.Para participar do sorteio é necessário curtir a página da Autoesc Casal 20 e compartilhar em seu perfil em modo público, caso o sorteado não atenda a ambos os critérios será desqualificado e um próximo sorteio será feito até haver um ganhador elegível. O cupom de 50% tem 15 dias de validade a partirvulgacao do resultado.Desenvolvido por <a href="http://pauloxavier.com" target="_blank">Paulo Xavier</a>.</p>
   </div>
 </footer>
 

@@ -76,6 +76,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
+  
+config.action_mailer.smtp_settings = {
+      address:              'mail.cfccasal20.com.br',
+      port:                 26,
+      domain:               'cfccasal20.com.br',
+      user_name:            'contato@cfccasal20.com.br',
+      password:             'adminweb111',
+      authentication:       'plain',
+      enable_starttls_auto: false,
+      openssl_verify_mode: "none"
+  }
 
 end
